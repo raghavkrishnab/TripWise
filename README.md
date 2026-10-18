@@ -108,10 +108,11 @@ Keep `DATABASE_URL` and `GEOAPIFY_API_KEY` in Render's Environment dashboard. Do
 ## Submission screenshots
 
 Screenshots captured from the locally running app are in `screenshots/`:
-- `01-explore.png` — destination search and results
-- `02-destination-details.png` — selected destination details
-- `03-my-trip-empty.png` — empty itinerary state
-- `04-my-trip-saved.png` — itinerary with a saved destination
+- `explore.png` — destination search and results
+- `location details.png` — selected destination details
+- `empty trip.png` — empty itinerary state
+- `my trip added list.png` — itinerary with a saved destination
+- `deletion confirmation.png` — deletion list confirmation
 
 ## Important
 This is an MVP without user accounts. The itinerary is shared by anyone who visits the same deployment. Mention this limitation in your demo and do not store personal or sensitive data.
