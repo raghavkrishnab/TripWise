@@ -1,0 +1,28 @@
+# Render Blueprint — TripWise
+# https://render.com/docs/blueprint-spec
+#
+# Deploy: Push this repo to GitHub, then in Render Dashboard → New → Blueprint
+# and point it at the repo. Render reads this file and provisions the service.
+
+services:
+  - type: web
+    name: tripwise
+    runtime: node
+    plan: free
+
+    # Build: install both server & client deps, then build the Vite frontend
+    buildCommand: npm run build
+
+    # Start: Express serves API + the built frontend from client/dist
+    startCommand: npm start
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      # These must be set manually in the Render Dashboard (or use sync: false)
+      - key: DATABASE_URL
+        sync: false
+      - key: GEOAPIFY_API_KEY
+        sync: false
